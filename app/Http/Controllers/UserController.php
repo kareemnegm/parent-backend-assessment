@@ -24,6 +24,6 @@ class UserController extends Controller
     public function getUsers(FilterRequest $request): JsonResponse
     {
         $users = $this->userService->listUsers($request->validated());
-        return response()->json($users, $users['status_code']);
+        return response()->json($users);
     }
 }
